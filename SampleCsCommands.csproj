@@ -53,6 +53,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="SampleCsArray.cs" />
+    <Compile Include="SampleCsBlock.cs" />
+    <Compile Include="SampleCsBooleanDifference.cs" />
+    <Compile Include="SampleCsCircleOfLines.cs" />
     <Compile Include="SampleCsCommandLineOptions.cs" />
     <Compile Include="SampleCsCommandsCommand.cs" />
     <Compile Include="SampleCsCommandsPlugIn.cs" />
@@ -62,15 +66,19 @@
     <Compile Include="SampleCsCustomRenderMeshSettings.cs" />
     <Compile Include="SampleCsDrawDistance.cs" />
     <Compile Include="SampleCsEscapeKey.cs" />
+    <Compile Include="SampleCsEscapeKey2.cs" />
     <Compile Include="SampleCsExplodeHatch.cs" />
     <Compile Include="SampleCsExtractPreview.cs" />
     <Compile Include="SampleCsGetMultiplePoints.cs" />
     <Compile Include="SampleCsHistoryDivide.cs" />
     <Compile Include="SampleCsMeshOutline.cs" />
+    <Compile Include="SampleCsOpen3dm.cs" />
     <Compile Include="SampleCsOrientPerpToCrv.cs" />
     <Compile Include="SampleCsPrintViewList.cs" />
     <Compile Include="SampleCsRenderBackground.cs" />
     <Compile Include="SampleCsSetDisplayMode.cs" />
+    <Compile Include="SampleCsSmash.cs" />
+    <Compile Include="SampleCsSpiral.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
