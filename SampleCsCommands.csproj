@@ -64,6 +64,7 @@
     <Compile Include="SampleCsContourMesh.cs" />
     <Compile Include="SampleCsCurveGetter.cs" />
     <Compile Include="SampleCsCustomRenderMeshSettings.cs" />
+    <Compile Include="SampleCsCurveDir.cs" />
     <Compile Include="SampleCsDrawDistance.cs" />
     <Compile Include="SampleCsEscapeKey.cs" />
     <Compile Include="SampleCsEscapeKey2.cs" />
