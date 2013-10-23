@@ -59,7 +59,7 @@ namespace SampleCsCommands
       if (System.Math.Abs(t1-t0) < Rhino.RhinoMath.ZeroTolerance)
         return Result.Failure;
 
-      if (crv.IsClosed || t0 > t1)
+      if (crv.IsClosed || (!crv.IsClosed && t0 > t1))
       {
         double t = t0; 
         t0 = t1; 
