@@ -72,6 +72,7 @@
     <Compile Include="SampleCsExplodeHatch.cs" />
     <Compile Include="SampleCsExtractPreview.cs" />
     <Compile Include="SampleCsGetMultiplePoints.cs" />
+    <Compile Include="SampleCsHistory.cs" />
     <Compile Include="SampleCsHistoryDivide.cs" />
     <Compile Include="SampleCsMeshOutline.cs" />
     <Compile Include="SampleCsOpen3dm.cs" />
