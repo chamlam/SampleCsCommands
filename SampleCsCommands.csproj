@@ -42,7 +42,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="RhinoCommon">
-      <HintPath>..\..\..\..\Program Files\Rhinoceros 5 (64-bit)\System\RhinoCommon.dll</HintPath>
+      <HintPath>C:\Program Files\Rhinoceros 5 (64-bit)\System\RhinoCommon.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />
@@ -66,6 +66,7 @@
     <Compile Include="SampleCsCustomLine.cs" />
     <Compile Include="SampleCsCustomRenderMeshSettings.cs" />
     <Compile Include="SampleCsCurveDir.cs" />
+    <Compile Include="SampleCsDeleteMeshFace.cs" />
     <Compile Include="SampleCsDrawDistance.cs" />
     <Compile Include="SampleCsDupBorder.cs" />
     <Compile Include="SampleCsEscapeKey.cs" />
