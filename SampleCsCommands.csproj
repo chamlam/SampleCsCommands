@@ -82,6 +82,7 @@
     <Compile Include="SampleCsPrintViewList.cs" />
     <Compile Include="SampleCsRenderBackground.cs" />
     <Compile Include="SampleCsSetDisplayMode.cs" />
+    <Compile Include="SampleCsShadedBrep.cs" />
     <Compile Include="SampleCsSmash.cs" />
     <Compile Include="SampleCsSmooth.cs" />
     <Compile Include="SampleCsSpiral.cs" />
