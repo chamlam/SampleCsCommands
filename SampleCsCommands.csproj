@@ -83,6 +83,7 @@
     <Compile Include="SampleCsOrientPerpToCrv.cs" />
     <Compile Include="SampleCsPrintViewList.cs" />
     <Compile Include="SampleCsRenderBackground.cs" />
+    <Compile Include="SampleCsRestoreNamedView.cs" />
     <Compile Include="SampleCsSetDisplayMode.cs" />
     <Compile Include="SampleCsShadedBrep.cs" />
     <Compile Include="SampleCsSmash.cs" />
