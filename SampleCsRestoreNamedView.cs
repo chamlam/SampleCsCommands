@@ -19,28 +19,28 @@ namespace SampleCsCommands
       get { return "SampleCsRestoreNamedView"; }
     }
 
-protected override Result RunCommand(RhinoDoc doc, RunMode mode)
-{
-  RhinoView view = doc.Views.ActiveView;
-  if (null == view)
-    return Result.Failure;
+    protected override Result RunCommand(RhinoDoc doc, RunMode mode)
+    {
+      RhinoView view = doc.Views.ActiveView;
+      if (null == view)
+        return Result.Failure;
 
-  string name = null;
-  Result rc = RhinoGet.GetString("Named view to restore", false, ref name);
-  if (rc != Result.Success || string.IsNullOrEmpty(name))
-    return Result.Cancel;
+      string name = null;
+      Result rc = RhinoGet.GetString("Named view to restore", false, ref name);
+      if (rc != Result.Success || string.IsNullOrEmpty(name))
+        return Result.Cancel;
 
-  int index = doc.NamedViews.FindByName(name);
-  if (index < 0 || index >= doc.NamedViews.Count)
-  {
-    RhinoApp.WriteLine("Named view not found");
-    return Result.Nothing;
-  }
+      int index = doc.NamedViews.FindByName(name);
+      if (index < 0 || index >= doc.NamedViews.Count)
+      {
+        RhinoApp.WriteLine("Named view not found");
+        return Result.Nothing;
+      }
 
-  doc.NamedViews.Restore(index, view, false);
-  view.Redraw();
+      doc.NamedViews.Restore(index, view, false);
+      view.Redraw();
 
-  return Result.Success;
-}
+      return Result.Success;
+    }
   }
 }
