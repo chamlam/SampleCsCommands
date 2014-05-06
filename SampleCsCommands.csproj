@@ -87,6 +87,7 @@
     <Compile Include="SampleCsRestoreNamedView.cs" />
     <Compile Include="SampleCsRotate.cs" />
     <Compile Include="SampleCsSetDisplayMode.cs" />
+    <Compile Include="SampleCsSetPt.cs" />
     <Compile Include="SampleCsShadedBrep.cs" />
     <Compile Include="SampleCsSmash.cs" />
     <Compile Include="SampleCsSmooth.cs" />
