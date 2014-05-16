@@ -68,6 +68,7 @@
     <Compile Include="SampleCsCustomRenderMeshSettings.cs" />
     <Compile Include="SampleCsCurveDir.cs" />
     <Compile Include="SampleCsDeleteMeshFace.cs" />
+    <Compile Include="SampleCsDeleteSubCrv.cs" />
     <Compile Include="SampleCsDrawDistance.cs" />
     <Compile Include="SampleCsDupBorder.cs" />
     <Compile Include="SampleCsDupMeshBorder.cs" />
