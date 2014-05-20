@@ -70,6 +70,7 @@
     <Compile Include="SampleCsDeleteMeshFace.cs" />
     <Compile Include="SampleCsDeleteSubCrv.cs" />
     <Compile Include="SampleCsDrawDistance.cs" />
+    <Compile Include="SampleCsDrawMesh.cs" />
     <Compile Include="SampleCsDupBorder.cs" />
     <Compile Include="SampleCsDupMeshBorder.cs" />
     <Compile Include="SampleCsEscapeKey.cs" />
