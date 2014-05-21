@@ -24,7 +24,7 @@ namespace SampleCsCommands
         Rhino.Display.DisplayMaterial material = new Rhino.Display.DisplayMaterial();
         material.IsTwoSided = true;
         material.Diffuse = System.Drawing.Color.Blue;
-        material.BackDiffuse = System.Drawing.Color.Cyan;
+        material.BackDiffuse = System.Drawing.Color.Red;
         e.Display.EnableLighting(true);
         e.Display.DrawMeshShaded(Mesh, material);
         e.Display.DrawMeshWires(Mesh, System.Drawing.Color.Black);
