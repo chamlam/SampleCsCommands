@@ -97,6 +97,7 @@
     <Compile Include="SampleCsSpiral.cs" />
     <Compile Include="SampleCsSubCurve.cs" />
     <Compile Include="SampleCsCurveEditPoints.cs" />
+    <Compile Include="SampleCsExplodePolyCurve.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
