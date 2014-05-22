@@ -6,15 +6,15 @@ using Rhino.DocObjects;
 namespace SampleCsCommands
 {
   [System.Runtime.InteropServices.Guid("aacdc2a8-ff40-4170-81f4-87d46232a0ef")]
-  public class SampleCsDupMeshBorder : Command
+  public class SampleCsDuplicateMeshBorder : Command
   {
-    public SampleCsDupMeshBorder()
+    public SampleCsDuplicateMeshBorder()
     {
     }
 
     public override string EnglishName
     {
-      get { return "SampleCsDupMeshBorder"; }
+      get { return "SampleCsDuplicateMeshBorder"; }
     }
 
     protected override Result RunCommand(RhinoDoc doc, RunMode mode)

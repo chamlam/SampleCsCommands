@@ -56,6 +56,8 @@ namespace SampleCsCommands
       Rhino.Geometry.Interval y_interval = new Rhino.Geometry.Interval(0, corners[1].DistanceTo(corners[2]));
 
       Rhino.Geometry.Mesh mesh = Rhino.Geometry.Mesh.CreateFromPlane(plane, x_interval, y_interval, 10, 10);
+      //mesh.FaceNormals.ComputeFaceNormals();
+      //mesh.Normals.ComputeNormals();
 
       SampleCsDrawMeshConduit conduit = new SampleCsDrawMeshConduit();
       conduit.Mesh = mesh;

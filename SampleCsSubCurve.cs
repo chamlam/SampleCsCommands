@@ -5,15 +5,15 @@ using Rhino.Commands;
 namespace SampleCsCommands
 {
   [System.Runtime.InteropServices.Guid("06f18176-ac87-45c3-a058-419f20a6908e")]
-  public class SampleCsSubCrv : Command
+  public class SampleCsSubCurve : Command
   {
-    public SampleCsSubCrv()
+    public SampleCsSubCurve()
     {
     }
 
     public override string EnglishName
     {
-      get { return "SampleCsSubCrv"; }
+      get { return "SampleCsSubCurve"; }
     }
 
     protected override Result RunCommand(RhinoDoc doc, RunMode mode)

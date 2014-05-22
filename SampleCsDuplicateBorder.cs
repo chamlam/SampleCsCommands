@@ -5,15 +5,15 @@ using Rhino.Commands;
 namespace SampleCsCommands
 {
   [System.Runtime.InteropServices.Guid("f34abe7d-050c-4067-8548-2f449670e0d6")]
-  public class SampleCsDupBorder : Command
+  public class SampleCsDuplicateBorder : Command
   {
-    public SampleCsDupBorder()
+    public SampleCsDuplicateBorder()
     {
     }
 
     public override string EnglishName
     {
-      get { return "SampleCsDupBorder"; }
+      get { return "SampleCsDuplicateBorder"; }
     }
 
     protected override Result RunCommand(RhinoDoc doc, RunMode mode)

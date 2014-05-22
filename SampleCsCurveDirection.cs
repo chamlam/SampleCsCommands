@@ -12,15 +12,15 @@ namespace SampleCsCommands
   /// SampleCsCurveDir command
   /// </summary>
   [System.Runtime.InteropServices.Guid("08d7d1bf-c7b7-4508-9de4-00a4aedb289e")]
-  public class SampleCsCurveDir : Command
+  public class SampleCsCurveDirection : Command
   {
-    public SampleCsCurveDir()
+    public SampleCsCurveDirection()
     {
     }
 
     public override string EnglishName
     {
-      get { return "SampleCsCurveDir"; }
+      get { return "SampleCsCurveDirection"; }
     }
 
     protected override Result RunCommand(RhinoDoc doc, RunMode mode)
@@ -35,7 +35,7 @@ namespace SampleCsCommands
 
       doc.Objects.UnselectAll();
 
-      SampleCsCurveDirConduit conduit = new SampleCsCurveDirConduit(go);
+      SampleCsCurveDirectionConduit conduit = new SampleCsCurveDirectionConduit(go);
       conduit.Enabled = true;
       doc.Views.Redraw();
 
@@ -59,14 +59,14 @@ namespace SampleCsCommands
   }
 
   /// <summary>
-  /// SampleCsCurveDirConduit display conduit
+  /// SampleCsCurveDirectionConduit display conduit
   /// </summary>
-  public class SampleCsCurveDirConduit : Rhino.Display.DisplayConduit
+  public class SampleCsCurveDirectionConduit : Rhino.Display.DisplayConduit
   {
     private const int CURVE_ARROW_COUNT = 3;
     private List<Curve> m_curves;
 
-    public SampleCsCurveDirConduit(GetObject go)
+    public SampleCsCurveDirectionConduit(GetObject go)
     {
       m_curves = new List<Curve>(go.ObjectCount);
      

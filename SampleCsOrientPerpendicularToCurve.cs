@@ -5,15 +5,15 @@ using Rhino.Commands;
 namespace SampleCsCommands
 {
   [System.Runtime.InteropServices.Guid("87d8544e-c7de-47a2-a671-cdb69a382ba9")]
-  public class SampleCsOrientPerpToCrv : Command
+  public class SampleCsOrientPerpendicularToCurve : Command
   {
-    public SampleCsOrientPerpToCrv()
+    public SampleCsOrientPerpendicularToCurve()
     {
     }
 
     public override string EnglishName
     {
-      get { return "SampleCsOrientPerpToCrv"; }
+      get { return "SampleCsOrientPerpendicularToCurve"; }
     }
 
     protected override Result RunCommand(RhinoDoc doc, RunMode mode)
@@ -68,7 +68,7 @@ namespace SampleCsCommands
       obj.Select(false);
 
       // Point on surface to orient to
-      RhOrientPerpPoint gx = new RhOrientPerpPoint(curve, plane, go.Object(0).Object());
+      GetOrientPerpendicularPoint gx = new GetOrientPerpendicularPoint(curve, plane, go.Object(0).Object());
       gx.SetCommandPrompt("New base point on curve");
       gx.Get();
       if (gx.CommandResult() != Rhino.Commands.Result.Success)
@@ -86,9 +86,9 @@ namespace SampleCsCommands
   }
 
   /// <summary>
-  /// RhOrientPerpPoint class
+  /// GetOrientPerpendicularPoint class
   /// </summary>
-  class RhOrientPerpPoint : Rhino.Input.Custom.GetPoint
+  class GetOrientPerpendicularPoint : Rhino.Input.Custom.GetPoint
   {
     Rhino.Geometry.Curve _curve;
     Rhino.Geometry.Plane _plane;
@@ -96,7 +96,7 @@ namespace SampleCsCommands
     Rhino.Geometry.Transform _xform;
     bool _draw;
 
-    public RhOrientPerpPoint(Rhino.Geometry.Curve curve, Rhino.Geometry.Plane plane, Rhino.DocObjects.RhinoObject obj)
+    public GetOrientPerpendicularPoint(Rhino.Geometry.Curve curve, Rhino.Geometry.Plane plane, Rhino.DocObjects.RhinoObject obj)
     {
       _curve = curve;
       _plane = plane;

@@ -8,15 +8,15 @@ using Rhino.Geometry;
 namespace SampleCsCommands
 {
   [System.Runtime.InteropServices.Guid("e9e0feff-c684-429b-8e63-2f3e5dc3577f")]
-  public class SampleCsCrvSeam : Command
+  public class SampleCsCurveSeam : Command
   {
-    public SampleCsCrvSeam()
+    public SampleCsCurveSeam()
     {
     }
 
     public override string EnglishName
     {
-      get { return "SampleCsCrvSeam"; }
+      get { return "SampleCsCurveSeam"; }
     }
 
     protected override Result RunCommand(RhinoDoc doc, RunMode mode)

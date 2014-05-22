@@ -9,15 +9,15 @@ using Rhino.Input.Custom;
 namespace SampleCsCommands
 {
   [System.Runtime.InteropServices.Guid("ae164ad5-62e1-4d1f-995c-3eff15262bb6")]
-  public class SampleCsDeleteSubCrv : Command
+  public class SampleCsDeleteSubCurve : Command
   {
-    public SampleCsDeleteSubCrv()
+    public SampleCsDeleteSubCurve()
     {
     }
 
     public override string EnglishName
     {
-      get { return "SampleCsDeleteSubCrv"; }
+      get { return "SampleCsDeleteSubCurve"; }
     }
 
     protected override Result RunCommand(RhinoDoc doc, RunMode mode)

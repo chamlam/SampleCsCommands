@@ -62,17 +62,17 @@
     <Compile Include="SampleCsCommandsPlugIn.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SampleCsContourMesh.cs" />
-    <Compile Include="SampleCsCrvSeam.cs" />
+    <Compile Include="SampleCsCurveSeam.cs" />
     <Compile Include="SampleCsCurveGetter.cs" />
     <Compile Include="SampleCsCustomLine.cs" />
     <Compile Include="SampleCsCustomRenderMeshSettings.cs" />
-    <Compile Include="SampleCsCurveDir.cs" />
+    <Compile Include="SampleCsCurveDirection.cs" />
     <Compile Include="SampleCsDeleteMeshFace.cs" />
-    <Compile Include="SampleCsDeleteSubCrv.cs" />
+    <Compile Include="SampleCsDeleteSubCurve.cs" />
     <Compile Include="SampleCsDrawDistance.cs" />
     <Compile Include="SampleCsDrawMesh.cs" />
-    <Compile Include="SampleCsDupBorder.cs" />
-    <Compile Include="SampleCsDupMeshBorder.cs" />
+    <Compile Include="SampleCsDuplicateBorder.cs" />
+    <Compile Include="SampleCsDuplicateMeshBorder.cs" />
     <Compile Include="SampleCsEscapeKey.cs" />
     <Compile Include="SampleCsEscapeKey2.cs" />
     <Compile Include="SampleCsExplodeHatch.cs" />
@@ -84,18 +84,19 @@
     <Compile Include="SampleCsMeshBrep.cs" />
     <Compile Include="SampleCsMeshOutline.cs" />
     <Compile Include="SampleCsOpen3dm.cs" />
-    <Compile Include="SampleCsOrientPerpToCrv.cs" />
+    <Compile Include="SampleCsOrientPerpendicularToCurve.cs" />
     <Compile Include="SampleCsPrintViewList.cs" />
     <Compile Include="SampleCsRenderBackground.cs" />
     <Compile Include="SampleCsRestoreNamedView.cs" />
     <Compile Include="SampleCsRotate.cs" />
     <Compile Include="SampleCsSetDisplayMode.cs" />
-    <Compile Include="SampleCsSetPt.cs" />
+    <Compile Include="SampleCsSetPoint.cs" />
     <Compile Include="SampleCsShadedBrep.cs" />
     <Compile Include="SampleCsSmash.cs" />
     <Compile Include="SampleCsSmooth.cs" />
     <Compile Include="SampleCsSpiral.cs" />
-    <Compile Include="SampleCsSubCrv.cs" />
+    <Compile Include="SampleCsSubCurve.cs" />
+    <Compile Include="SampleCsCurveEditPoints.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

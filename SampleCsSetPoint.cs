@@ -9,13 +9,13 @@ using Rhino.Input.Custom;
 
 namespace SampleCsCommands
 {
-  #region GetSetPtTransform class
+  #region GetSetPointTransform class
   /// <summary>
-  /// GetSetPtTransform
+  /// GetSetPointTransform
   /// </summary>
-  internal class GetSetPtTransform : GetTransform
+  internal class GetSetPointTransform : GetTransform
   {
-    public GetSetPtTransform(bool bSetX, bool bSetY, bool bSetZ)
+    public GetSetPointTransform(bool bSetX, bool bSetY, bool bSetZ)
     {
       SetX = bSetX;
       SetY = bSetY;
@@ -53,20 +53,20 @@ namespace SampleCsCommands
   #endregion
 
 
-  #region SampleCsSetPt command
+  #region SampleCsSetPoint command
   /// <summary>
-  /// SampleCsSetPt
+  /// SampleCsSetPoint
   /// </summary>
   [System.Runtime.InteropServices.Guid("ece11f77-6a51-49cd-a737-d31072967f27")]
-  public class SampleCsSetPt : TransformCommand
+  public class SampleCsSetPoint : TransformCommand
   {
-    public SampleCsSetPt()
+    public SampleCsSetPoint()
     {
     }
 
     public override string EnglishName
     {
-      get { return "SampleCsSetPt"; }
+      get { return "SampleCsSetPoint"; }
     }
 
     protected override Result RunCommand(RhinoDoc doc, RunMode mode)
@@ -85,7 +85,7 @@ namespace SampleCsCommands
       OptionToggle opt_zset = new OptionToggle(true, "No", "Yes");
 
       // Second reference point
-      GetSetPtTransform gx = new GetSetPtTransform(true, true, true);
+      GetSetPointTransform gx = new GetSetPointTransform(true, true, true);
       gx.SetCommandPrompt("Location for points");
       gx.AddTransformObjects(list);
       for (;;)
