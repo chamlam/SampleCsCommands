@@ -41,6 +41,7 @@ namespace SampleCsCommands
         return gp.CommandResult();
 
       Point3d point = gp.Point();
+
       doc.Objects.AddPoint(point);
       doc.Views.Redraw();
 
