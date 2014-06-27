@@ -83,6 +83,7 @@
     <Compile Include="SampleCsImportNamedViews.cs" />
     <Compile Include="SampleCsMeshBrep.cs" />
     <Compile Include="SampleCsMeshOutline.cs" />
+    <Compile Include="SampleCsNamedPlaneSurface.cs" />
     <Compile Include="SampleCsOpen3dm.cs" />
     <Compile Include="SampleCsOrientPerpendicularToCurve.cs" />
     <Compile Include="SampleCsPointOnMesh.cs" />
