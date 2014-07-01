@@ -94,6 +94,7 @@
     <Compile Include="SampleCsSetDisplayMode.cs" />
     <Compile Include="SampleCsSetPoint.cs" />
     <Compile Include="SampleCsShadedBrep.cs" />
+    <Compile Include="SampleCsShadedView.cs" />
     <Compile Include="SampleCsSmash.cs" />
     <Compile Include="SampleCsSmooth.cs" />
     <Compile Include="SampleCsSpiral.cs" />
