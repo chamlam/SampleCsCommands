@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
@@ -102,6 +103,114 @@
     <Compile Include="SampleCsExplodePolyCurve.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+=======
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug32</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C1498326-89AB-48B0-A148-290C169CAA68}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SampleCsCommands</RootNamespace>
+    <AssemblyName>SampleCsCommands</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug32|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug64|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="RhinoCommon">
+      <HintPath>C:\Program Files\Rhinoceros 5 (64-bit)\System\RhinoCommon.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="SampleCsArray.cs" />
+    <Compile Include="SampleCsBlock.cs" />
+    <Compile Include="SampleCsBooleanDifference.cs" />
+    <Compile Include="SampleCsBoxMorph.cs" />
+    <Compile Include="SampleCsCircleOfLines.cs" />
+    <Compile Include="SampleCsCommandLineOptions.cs" />
+    <Compile Include="SampleCsCommandsCommand.cs" />
+    <Compile Include="SampleCsCommandsPlugIn.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SampleCsContourMesh.cs" />
+    <Compile Include="SampleCsCurveSeam.cs" />
+    <Compile Include="SampleCsCurveGetter.cs" />
+    <Compile Include="SampleCsCustomLine.cs" />
+    <Compile Include="SampleCsCustomRenderMeshSettings.cs" />
+    <Compile Include="SampleCsCurveDirection.cs" />
+    <Compile Include="SampleCsDeleteMeshFace.cs" />
+    <Compile Include="SampleCsDeleteSubCurve.cs" />
+    <Compile Include="SampleCsDrawDistance.cs" />
+    <Compile Include="SampleCsDrawMesh.cs" />
+    <Compile Include="SampleCsDuplicateBorder.cs" />
+    <Compile Include="SampleCsDuplicateMeshBorder.cs" />
+    <Compile Include="SampleCsEscapeKey.cs" />
+    <Compile Include="SampleCsEscapeKey2.cs" />
+    <Compile Include="SampleCsExplodeHatch.cs" />
+    <Compile Include="SampleCsExtractPreview.cs" />
+    <Compile Include="SampleCsGetMultiplePoints.cs" />
+    <Compile Include="SampleCsHistory.cs" />
+    <Compile Include="SampleCsHistoryDivide.cs" />
+    <Compile Include="SampleCsImportNamedViews.cs" />
+    <Compile Include="SampleCsMeshBrep.cs" />
+    <Compile Include="SampleCsMeshOutline.cs" />
+    <Compile Include="SampleCsNamedPlaneSurface.cs" />
+    <Compile Include="SampleCsOpen3dm.cs" />
+    <Compile Include="SampleCsOrientPerpendicularToCurve.cs" />
+    <Compile Include="SampleCsPointOnMesh.cs" />
+    <Compile Include="SampleCsPrintViewList.cs" />
+    <Compile Include="SampleCsRenderBackground.cs" />
+    <Compile Include="SampleCsRestoreNamedView.cs" />
+    <Compile Include="SampleCsRotate.cs" />
+    <Compile Include="SampleCsSetDisplayMode.cs" />
+    <Compile Include="SampleCsSetPoint.cs" />
+    <Compile Include="SampleCsShadedBrep.cs" />
+    <Compile Include="SampleCsShadedView.cs" />
+    <Compile Include="SampleCsSmash.cs" />
+    <Compile Include="SampleCsSmooth.cs" />
+    <Compile Include="SampleCsSpiral.cs" />
+    <Compile Include="SampleCsSubCurve.cs" />
+    <Compile Include="SampleCsCurveEditPoints.cs" />
+    <Compile Include="SampleCsExplodePolyCurve.cs" />
+    <Compile Include="SampleCsTestPlanarCurveContainment.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+>>>>>>> 4652bec5362cf20412ae815c9114155f3028d1e7
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
