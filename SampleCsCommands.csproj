@@ -42,7 +42,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="RhinoCommon">
-      <HintPath>C:\Program Files\Rhinoceros 5 (64-bit)\System\RhinoCommon.dll</HintPath>
+      <HintPath>..\..\..\..\Program Files\Rhinoceros 5.0 (64-bit)\System\RhinoCommon.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />
@@ -57,6 +57,7 @@
     <Compile Include="SampleCsBooleanDifference.cs" />
     <Compile Include="SampleCsBoxMorph.cs" />
     <Compile Include="SampleCsCircleOfLines.cs" />
+    <Compile Include="SampleCsColorfulMeshBox.cs" />
     <Compile Include="SampleCsCommandLineOptions.cs" />
     <Compile Include="SampleCsCommandsCommand.cs" />
     <Compile Include="SampleCsCommandsPlugIn.cs" />
