@@ -51,7 +51,7 @@ namespace SampleCsCommands
 
     /// <summary>
     /// Intersects two circles that lie on the world x-y plane
-    /// http://paulbourke.net/geometry/circlesphere/
+    /// Reference: http://paulbourke.net/geometry/circlesphere/
     /// </summary>
     private bool CircleCircleIntersection(Circle c0, Circle c1, ref Point3d p0, ref Point3d p1)
     {
@@ -69,7 +69,7 @@ namespace SampleCsCommands
       double dy = y1 - y0;
 
       // Determine the straight-line distance between the centers.
-      double d = Math.Sqrt((dy * dy) + (dx * dx));
+      double d = Hypotenuse(dx, dy);
 
       // Check for solvability.
       if (d > (r0 + r1))
@@ -110,6 +110,37 @@ namespace SampleCsCommands
       p1.Y = y2 - ry;
 
       return true;
+    }
+
+    /// <summary>
+    /// Calculates the hypotenuse.
+    /// Reference:
+    ///   Moler-Morrison, 
+    ///   "Replacing Square Roots by Pythagorean Sums", 
+    ///   IBM Journal of Research and Development", 
+    ///   Vol. 27, No. 6, PP. 577-581, Nov.1983
+    /// </summary>
+    /// <param name="x">A floating point value</param>
+    /// <param name="y">A floating point value</param>
+    /// <returns>The length of the hypotenuse.</returns>
+    private double Hypotenuse(double x, double y)
+    {
+      double r, s;
+      if (x < 0) x = -x;
+      if (y < 0) y = -y;
+      if (x < y) { r = x; x = y; y = r; }
+      if (x == 0) return 0;
+      for (;;) 
+      {
+	      r = y / x;
+	      r *= r;
+	      s = r + 4;
+	      if (s == 4)
+	          return x;
+	      r /= s;
+	      x += 2 * r * x;
+	      y *= r;
+      }
     }
   }
 }
