@@ -106,8 +106,10 @@ namespace SampleCsCommands
       // Determine the absolute intersection points.
       p0.X = x2 + rx;
       p0.Y = y2 + ry;
+      p0.Z = 0;
       p1.X = x2 - rx;
       p1.Y = y2 - ry;
+      p1.Z = 0;
 
       return true;
     }
