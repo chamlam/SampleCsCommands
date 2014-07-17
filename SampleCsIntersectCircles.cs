@@ -40,8 +40,11 @@ namespace SampleCsCommands
       Point3d int1 = new Point3d();
       if (CircleCircleIntersection(circle0, circle1, ref int0, ref int1))
       {
-        doc.Objects.AddPoint(int0);
-        doc.Objects.AddPoint(int1);
+        Guid id0 = doc.Objects.AddPoint(int0);
+        Guid id1 = doc.Objects.AddPoint(int1);
+
+        doc.Objects.Select(id0);
+        doc.Objects.Select(id1);
       }
 
       doc.Views.Redraw();
@@ -50,7 +53,7 @@ namespace SampleCsCommands
     }
 
     /// <summary>
-    /// Intersects two circles that lie on the world x-y plane
+    /// Calculates the intersects two circles that lie on the world x-y plane.
     /// Reference: http://paulbourke.net/geometry/circlesphere/
     /// </summary>
     private bool CircleCircleIntersection(Circle c0, Circle c1, ref Point3d p0, ref Point3d p1)
@@ -63,23 +66,22 @@ namespace SampleCsCommands
       double y1 = c1.Center.Y;
       double r1 = c1.Radius;
 
-      // dx and dy are the vertical and horizontal 
-      // distances between the circle centers.
+      // dx and dy are the vertical and horizontal distances between the circle centers.
       double dx = x1 - x0;
       double dy = y1 - y0;
 
       // Determine the straight-line distance between the centers.
-      double d = Hypotenuse(dx, dy);
+      double d = Hypot(dx, dy);
 
       // Check for solvability.
       if (d > (r0 + r1))
       {
-        // no solution. circles do not intersect.
+        // No solution. circles do not intersect.
         return false;
       }
       if (d < Math.Abs(r0 - r1))
       {
-        // no solution. one circle is contained in the other
+        // No solution. one circle is contained in the other
         return false;
       }
 
@@ -94,12 +96,10 @@ namespace SampleCsCommands
       double x2 = x0 + (dx * a / d);
       double y2 = y0 + (dy * a / d);
 
-      // Determine the distance from point 2 to either of the
-      // intersection points.
+      // Determine the distance from point 2 to either of the intersection points.
       double h = Math.Sqrt((r0 * r0) - (a * a));
 
-      // Now determine the offsets of the intersection points from
-      // point 2.
+      // Now determine the offsets of the intersection points from point 2.
       double rx = -dy * (h / d);
       double ry = dx * (h / d);
 
@@ -113,34 +113,18 @@ namespace SampleCsCommands
     }
 
     /// <summary>
-    /// Calculates the hypotenuse.
-    /// Reference:
-    ///   Moler-Morrison, 
-    ///   "Replacing Square Roots by Pythagorean Sums", 
-    ///   IBM Journal of Research and Development", 
-    ///   Vol. 27, No. 6, PP. 577-581, Nov.1983
+    /// Calculates hypotenuse using Newton-Raphson method.
     /// </summary>
-    /// <param name="x">A floating point value</param>
-    /// <param name="y">A floating point value</param>
-    /// <returns>The length of the hypotenuse.</returns>
-    private double Hypotenuse(double x, double y)
+    private double Hypot(double x, double y)
     {
-      double r, s;
-      if (x < 0) x = -x;
-      if (y < 0) y = -y;
-      if (x < y) { r = x; x = y; y = r; }
-      if (x == 0) return 0;
-      for (;;) 
-      {
-	      r = y / x;
-	      r *= r;
-	      s = r + 4;
-	      if (s == 4)
-	          return x;
-	      r /= s;
-	      x += 2 * r * x;
-	      y *= r;
-      }
+     double r;
+     if (x == 0) return y;
+     if (y == 0) return x;
+     if (x < 0) x = -x;
+     if (y < 0) y = -y;
+     if (x < y) {r = x; x = y; y = r;}
+     r = y / x;
+     return x * Math.Sqrt(1 + r * r);    
     }
   }
 }
