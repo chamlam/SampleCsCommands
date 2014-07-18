@@ -52,6 +52,11 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="SampleCsArray.cs" />
     <Compile Include="SampleCsBlock.cs" />
     <Compile Include="SampleCsBooleanDifference.cs" />
@@ -72,6 +77,7 @@
     <Compile Include="SampleCsDeleteSubCurve.cs" />
     <Compile Include="SampleCsDrawDistance.cs" />
     <Compile Include="SampleCsDrawMesh.cs" />
+    <Compile Include="SampleCsDrawViewportLogo.cs" />
     <Compile Include="SampleCsDuplicateBorder.cs" />
     <Compile Include="SampleCsDuplicateMeshBorder.cs" />
     <Compile Include="SampleCsEscapeKey.cs" />
@@ -103,6 +109,15 @@
     <Compile Include="SampleCsCurveEditPoints.cs" />
     <Compile Include="SampleCsExplodePolyCurve.cs" />
     <Compile Include="SampleCsTestPlanarCurveContainment.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
