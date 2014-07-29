@@ -58,6 +58,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="SampleCsArray.cs" />
+    <Compile Include="SampleCsAutomateGrasshopper.cs" />
     <Compile Include="SampleCsBlock.cs" />
     <Compile Include="SampleCsBooleanDifference.cs" />
     <Compile Include="SampleCsBoxMorph.cs" />
