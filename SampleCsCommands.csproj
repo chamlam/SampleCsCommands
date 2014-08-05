@@ -112,6 +112,7 @@
     <Compile Include="SampleCsSubCurve.cs" />
     <Compile Include="SampleCsCurveEditPoints.cs" />
     <Compile Include="SampleCsExplodePolyCurve.cs" />
+    <Compile Include="SampleCsSweep1.cs" />
     <Compile Include="SampleCsTestPlanarCurveContainment.cs" />
   </ItemGroup>
   <ItemGroup>
