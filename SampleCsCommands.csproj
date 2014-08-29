@@ -114,6 +114,7 @@
     <Compile Include="SampleCsExplodePolyCurve.cs" />
     <Compile Include="SampleCsSweep1.cs" />
     <Compile Include="SampleCsTestPlanarCurveContainment.cs" />
+    <Compile Include="SampleCsText.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
