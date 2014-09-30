@@ -97,6 +97,7 @@
     <Compile Include="SampleCsNamedPlaneSurface.cs" />
     <Compile Include="SampleCsOpen3dm.cs" />
     <Compile Include="SampleCsOrientPerpendicularToCurve.cs" />
+    <Compile Include="SampleCsPersistentSettings.cs" />
     <Compile Include="SampleCsPointOnMesh.cs" />
     <Compile Include="SampleCsPrintViewList.cs" />
     <Compile Include="SampleCsRenderBackground.cs" />
