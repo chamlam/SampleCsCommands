@@ -1,4 +1,7 @@
-﻿namespace SampleCsCommands
+﻿using Rhino;
+using Rhino.PlugIns;
+
+namespace SampleCsCommands
 {
   ///<summary>
   /// <para>Every RhinoCommon .rhp assembly must have one and only one PlugIn-derived
@@ -8,22 +11,41 @@
   /// attributes in AssemblyInfo.cs (you might need to click "Project" ->
   /// "Show All Files" to see it in the "Solution Explorer" window).</para>
   ///</summary>
-  public class SampleCsCommandsPlugIn : Rhino.PlugIns.PlugIn
+  public class SampleCsCommandsPlugIn : PlugIn
   {
     public SampleCsCommandsPlugIn()
     {
       Instance = this;
+      IsolateIndex = 0;
     }
 
-    ///<summary>Gets the only instance of the SampleCsCommandsPlugIn plug-in.</summary>
+    /// <summary>
+    /// Gets the only instance of the SampleCsCommandsPlugIn plug-in.
+    /// </summary>
     public static SampleCsCommandsPlugIn Instance
     {
       get;
       private set;
     }
 
+    /// <summary>
+    /// Used by the Isolate and Unisolate commands.
+    /// </summary>
+    public int IsolateIndex { get; set; }
+
     // You can override methods here to change the plug-in behavior on
     // loading and shut down, add options pages to the Rhino _Option command
     // and mantain plug-in wide options in a document.
+
+    protected override LoadReturnCode OnLoad(ref string errorMessage)
+    {
+      RhinoDoc.CloseDocument += new System.EventHandler<Rhino.DocumentEventArgs>(OnCloseDocument);
+      return LoadReturnCode.Success;
+    }
+
+    void OnCloseDocument(object sender, Rhino.DocumentEventArgs e)
+    {
+      IsolateIndex = 0;
+    }
   }
 }

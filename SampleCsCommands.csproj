@@ -79,6 +79,7 @@
     <Compile Include="SampleCsDeleteSubCurve.cs" />
     <Compile Include="SampleCsDrawDistance.cs" />
     <Compile Include="SampleCsDrawMesh.cs" />
+    <Compile Include="SampleCsDrawText.cs" />
     <Compile Include="SampleCsDrawViewportLogo.cs" />
     <Compile Include="SampleCsDuplicateBorder.cs" />
     <Compile Include="SampleCsDuplicateMeshBorder.cs" />
@@ -91,6 +92,7 @@
     <Compile Include="SampleCsHistoryDivide.cs" />
     <Compile Include="SampleCsImportNamedViews.cs" />
     <Compile Include="SampleCsIntersectCircles.cs" />
+    <Compile Include="SampleCsIsolate.cs" />
     <Compile Include="SampleCsMeshBrep.cs" />
     <Compile Include="SampleCsMeshOutline.cs" />
     <Compile Include="SampleCsModifySphereRadius.cs" />
@@ -119,6 +121,7 @@
     <Compile Include="SampleCsSweep1.cs" />
     <Compile Include="SampleCsTestPlanarCurveContainment.cs" />
     <Compile Include="SampleCsText.cs" />
+    <Compile Include="SampleCsUnisolate.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
