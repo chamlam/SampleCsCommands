@@ -1,80 +1,91 @@
-﻿using System;
-using Rhino;
+﻿using Rhino;
 using Rhino.Commands;
+using Rhino.DocObjects;
+using Rhino.Display;
+using Rhino.Input.Custom;
+using Rhino.Geometry;
 
 namespace SampleCsCommands
 {
   [System.Runtime.InteropServices.Guid("87d8544e-c7de-47a2-a671-cdb69a382ba9")]
   public class SampleCsOrientPerpendicularToCurve : Command
   {
+    /// <summary>
+    /// Constructor
+    /// </summary>
     public SampleCsOrientPerpendicularToCurve()
     {
     }
 
+    /// <summary>
+    /// Command name
+    /// </summary>
     public override string EnglishName
     {
       get { return "SampleCsOrientPerpendicularToCurve"; }
     }
 
+    /// <summary>
+    /// Runs the command
+    /// </summary>
     protected override Result RunCommand(RhinoDoc doc, RunMode mode)
     {
       // Select objects to orient
-      Rhino.Input.Custom.GetObject go = new Rhino.Input.Custom.GetObject();
+      var go = new GetObject();
       go.SetCommandPrompt("Select objects to orient");
       go.SubObjectSelect = false;
       go.GroupSelect = true;
       go.GetMultiple(1, 0);
-      if (go.CommandResult() != Rhino.Commands.Result.Success)
+      if (go.CommandResult() != Result.Success)
         return go.CommandResult();
 
       // Point to orient from
-      Rhino.Input.Custom.GetPoint gp = new Rhino.Input.Custom.GetPoint();
+      var gp = new GetPoint();
       gp.SetCommandPrompt("Point to orient from");
       gp.Get();
-      if (gp.CommandResult() != Rhino.Commands.Result.Success)
+      if (gp.CommandResult() != Result.Success)
         return gp.CommandResult();
 
       // Define source plane
-      Rhino.Display.RhinoView view = gp.View();
+      var view = gp.View();
       if (view == null)
       {
         view = doc.Views.ActiveView;
         if (view == null)
-          return Rhino.Commands.Result.Failure;
+          return Result.Failure;
       }
-      Rhino.Geometry.Plane plane = view.ActiveViewport.ConstructionPlane();
+
+      var plane = view.ActiveViewport.ConstructionPlane();
       plane.Origin = gp.Point();
 
       // Curve to orient on
-      Rhino.Input.Custom.GetObject gc = new Rhino.Input.Custom.GetObject();
+      var gc = new GetObject();
       gc.SetCommandPrompt("Curve to orient on");
-      gc.GeometryFilter = Rhino.DocObjects.ObjectType.Curve;
+      gc.GeometryFilter = ObjectType.Curve;
       gc.EnablePreSelect(false, true);
       gc.DeselectAllBeforePostSelect = false;
       gc.Get();
-      if (gc.CommandResult() != Rhino.Commands.Result.Success)
+      if (gc.CommandResult() != Result.Success)
         return gc.CommandResult();
 
-      Rhino.DocObjects.ObjRef objref = gc.Object(0);
-      // get selected curve object
-      Rhino.DocObjects.RhinoObject obj = objref.Object();
-      if (obj == null)
-        return Rhino.Commands.Result.Failure;
-      // get selected curve
-      Rhino.Geometry.Curve curve = objref.Curve();
-      if (curve == null)
-        return Rhino.Commands.Result.Failure;
+      var objref = gc.Object(0);
+      var obj = objref.Object();
+      var curve = objref.Curve();
+      if (obj == null || curve == null)
+        return Result.Failure;
+
       // Unselect curve
       obj.Select(false);
 
       // Point on surface to orient to
-      GetOrientPerpendicularPoint gx = new GetOrientPerpendicularPoint(curve, plane, go.Object(0).Object());
+      var gx = new GetOrientPerpendicularPoint(curve, plane, go.Object(0).Object());
       gx.SetCommandPrompt("New base point on curve");
       gx.Get();
-      if (gx.CommandResult() != Rhino.Commands.Result.Success)
+      if (gx.CommandResult() != Result.Success)
         return gx.CommandResult();
 
-      Rhino.Geometry.Transform xform = new Rhino.Geometry.Transform(1);
+      // One final calculation
+      var xform = new Transform(1);
       if (gx.CalculateTransform(gx.View().ActiveViewport, gx.Point(), ref xform))
       {
         doc.Objects.Transform(go.Object(0).Object(), xform, true);
@@ -88,40 +99,46 @@ namespace SampleCsCommands
   /// <summary>
   /// GetOrientPerpendicularPoint class
   /// </summary>
-  class GetOrientPerpendicularPoint : Rhino.Input.Custom.GetPoint
+  class GetOrientPerpendicularPoint : GetPoint
   {
-    Rhino.Geometry.Curve _curve;
-    Rhino.Geometry.Plane _plane;
-    Rhino.DocObjects.RhinoObject _obj;
-    Rhino.Geometry.Transform _xform;
-    bool _draw;
+    private readonly Curve m_curve;
+    private readonly Plane m_plane;
+    private readonly RhinoObject m_obj;
+    private Transform m_xform;
+    private bool m_draw;
 
-    public GetOrientPerpendicularPoint(Rhino.Geometry.Curve curve, Rhino.Geometry.Plane plane, Rhino.DocObjects.RhinoObject obj)
+    /// <summary>
+    /// Constructor
+    /// </summary>
+    public GetOrientPerpendicularPoint(Curve curve, Plane plane, RhinoObject obj)
     {
-      _curve = curve;
-      _plane = plane;
-      _obj = obj;
+      m_curve = curve;
+      m_plane = plane;
+      m_obj = obj;
 
-      _xform = new Rhino.Geometry.Transform(1);
-      _draw = false;
+      m_xform = new Transform(1);
+      m_draw = false;
 
-      this.Constrain(_curve, false);
-      this.MouseMove += new EventHandler<Rhino.Input.Custom.GetPointMouseEventArgs>(RhOrientPerpPoint_MouseMove);
-      this.DynamicDraw += new EventHandler<Rhino.Input.Custom.GetPointDrawEventArgs>(RhOrientPerpPoint_DynamicDraw);
+      Constrain(m_curve, false);
+      MouseMove += OnMouseMove;
+      DynamicDraw += OnDynamicDraw;
     }
 
-    public bool CalculateTransform(Rhino.Display.RhinoViewport vp, Rhino.Geometry.Point3d pt, ref Rhino.Geometry.Transform xform)
+    /// <summary>
+    /// Calculate the transformation
+    /// </summary>
+    public bool CalculateTransform(RhinoViewport vp, Point3d pt, ref Transform xform)
     {
       bool rc = false;
-      if (null != _curve)
+      if (null != m_curve)
       {
         double t;
-        if (_curve.ClosestPoint(pt, out t))
+        if (m_curve.ClosestPoint(pt, out t))
         {
-          Rhino.Geometry.Plane frame;
-          if (_curve.PerpendicularFrameAt(t, out frame))
+          Plane frame;
+          if (m_curve.PerpendicularFrameAt(t, out frame))
           {
-            xform = Rhino.Geometry.Transform.PlaneToPlane(_plane, frame);
+            xform = Transform.PlaneToPlane(m_plane, frame);
             rc = xform.IsValid;
           }
         }
@@ -129,17 +146,23 @@ namespace SampleCsCommands
       return rc;
     }
 
-    void RhOrientPerpPoint_MouseMove(object sender, Rhino.Input.Custom.GetPointMouseEventArgs e)
+    /// <summary>
+    /// MouseMove event handler
+    /// </summary>
+    void OnMouseMove(object sender, GetPointMouseEventArgs e)
     {
-      _draw = CalculateTransform(e.Viewport, e.Point, ref _xform);
+      m_draw = CalculateTransform(e.Viewport, e.Point, ref m_xform);
     }
 
-    void RhOrientPerpPoint_DynamicDraw(object sender, Rhino.Input.Custom.GetPointDrawEventArgs e)
+    /// <summary>
+    /// DynamicDraw event handler
+    /// </summary>
+    void OnDynamicDraw(object sender, GetPointDrawEventArgs e)
     {
-      if (_draw)
+      if (m_draw)
       {
-        if (null != _obj)
-          e.Display.DrawObject(_obj, _xform);
+        if (null != m_obj)
+          e.Display.DrawObject(m_obj, m_xform);
       }
     }
   }
