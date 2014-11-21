@@ -103,6 +103,7 @@
     <Compile Include="SampleCsPictureFrame.cs" />
     <Compile Include="SampleCsPointOnMesh.cs" />
     <Compile Include="SampleCsPrintViewList.cs" />
+    <Compile Include="SampleCsProjectPointToMesh.cs" />
     <Compile Include="SampleCsRenderBackground.cs" />
     <Compile Include="SampleCsRestoreNamedView.cs" />
     <Compile Include="SampleCsRotate.cs" />
