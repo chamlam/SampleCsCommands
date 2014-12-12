@@ -87,6 +87,7 @@
     <Compile Include="SampleCsEscapeKey2.cs" />
     <Compile Include="SampleCsExplodeHatch.cs" />
     <Compile Include="SampleCsExtractPreview.cs" />
+    <Compile Include="SampleCsFilletSrf.cs" />
     <Compile Include="SampleCsGetMultiplePoints.cs" />
     <Compile Include="SampleCsHistory.cs" />
     <Compile Include="SampleCsHistoryDivide.cs" />
