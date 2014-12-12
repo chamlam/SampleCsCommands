@@ -85,6 +85,7 @@
     <Compile Include="SampleCsDuplicateMeshBorder.cs" />
     <Compile Include="SampleCsEscapeKey.cs" />
     <Compile Include="SampleCsEscapeKey2.cs" />
+    <Compile Include="SampleCsExplodeBlock.cs" />
     <Compile Include="SampleCsExplodeHatch.cs" />
     <Compile Include="SampleCsExtractPreview.cs" />
     <Compile Include="SampleCsFilletSrf.cs" />
