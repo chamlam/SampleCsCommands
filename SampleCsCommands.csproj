@@ -91,6 +91,7 @@
     <Compile Include="SampleCsFilletSrf.cs" />
     <Compile Include="SampleCsGetMultiplePoints.cs" />
     <Compile Include="SampleCsGetPoint.cs" />
+    <Compile Include="SampleCsGetPointOnBreps.cs" />
     <Compile Include="SampleCsHistory.cs" />
     <Compile Include="SampleCsHistoryDivide.cs" />
     <Compile Include="SampleCsImportNamedViews.cs" />
