@@ -57,6 +57,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="SampleCsAddNurbsSurface.cs" />
     <Compile Include="SampleCsArray.cs" />
     <Compile Include="SampleCsAutomateGrasshopper.cs" />
     <Compile Include="SampleCsBlock.cs" />
