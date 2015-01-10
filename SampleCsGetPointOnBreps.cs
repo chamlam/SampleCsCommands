@@ -80,14 +80,18 @@ namespace SampleCsCommands
       var minimum_distance = Double.MaxValue;
       foreach (var brep in Breps)
       {
-        var brep_point = brep.ClosestPoint(point);
-        if (brep_point.IsValid)
+        foreach (var face in brep.Faces)
         {
-          double distance = brep_point.DistanceTo(point);
-          if (distance < minimum_distance)
+          double u, v;
+          if (face.ClosestPoint(point, out u, out v))
           {
-            minimum_distance = distance;
-            closest_point = brep_point;
+            var face_point = face.PointAt(u, v);
+            double distance = face_point.DistanceTo(point);
+            if (distance < minimum_distance)
+            {
+              minimum_distance = distance;
+              closest_point = face_point;
+            }
           }
         }
       }
