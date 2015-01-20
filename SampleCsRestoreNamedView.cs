@@ -37,7 +37,8 @@ namespace SampleCsCommands
         return Result.Nothing;
       }
 
-      doc.NamedViews.Restore(index, view, false);
+      //doc.NamedViews.Restore(index, view, false);
+      doc.NamedViews.RestoreAnimated(index, view, false);
       view.Redraw();
 
       return Result.Success;
