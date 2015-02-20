@@ -133,6 +133,7 @@
     <Compile Include="SampleCsTestPlanarCurveContainment.cs" />
     <Compile Include="SampleCsText.cs" />
     <Compile Include="SampleCsUnisolate.cs" />
+    <Compile Include="SampleCsViewSize.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
