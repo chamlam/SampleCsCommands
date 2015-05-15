@@ -58,6 +58,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="SampleCsAddNurbsCircle.cs" />
+    <Compile Include="SampleCsBoundingBox.cs" />
     <Compile Include="SampleCsNurbsCircle.cs" />
     <Compile Include="SampleCsAddNurbsCurve.cs" />
     <Compile Include="SampleCsAddNurbsSurface.cs" />
