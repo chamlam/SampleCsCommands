@@ -110,6 +110,7 @@
     <Compile Include="SampleCsOrientPerpendicularToCurve.cs" />
     <Compile Include="SampleCsPersistentSettings.cs" />
     <Compile Include="SampleCsPictureFrame.cs" />
+    <Compile Include="SampleCsPlanarClosedCurveRelationship.cs" />
     <Compile Include="SampleCsPointCloudPoints.cs" />
     <Compile Include="SampleCsPointOnMesh.cs" />
     <Compile Include="SampleCsPrintViewList.cs" />
