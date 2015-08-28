@@ -59,6 +59,7 @@
     </Compile>
     <Compile Include="SampleCsAddNurbsCircle.cs" />
     <Compile Include="SampleCsBoundingBox.cs" />
+    <Compile Include="SampleCsExtrusion.cs" />
     <Compile Include="SampleCsNurbsCircle.cs" />
     <Compile Include="SampleCsAddNurbsCurve.cs" />
     <Compile Include="SampleCsAddNurbsSurface.cs" />
