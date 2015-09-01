@@ -119,6 +119,7 @@
     <Compile Include="SampleCsRenderBackground.cs" />
     <Compile Include="SampleCsRestoreNamedView.cs" />
     <Compile Include="SampleCsRotate.cs" />
+    <Compile Include="SampleCsSaveAs.cs" />
     <Compile Include="SampleCsSelectLayerObjects.cs" />
     <Compile Include="SampleCsSetDisplayMode.cs" />
     <Compile Include="SampleCsSetPoint.cs" />
