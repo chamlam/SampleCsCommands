@@ -38,7 +38,7 @@ namespace SampleCsCommands
     {
       if (null != m_brep && m_brep.IsValid)
       {
-        e.BoundingBox.Union(BrepGeometry.GetBoundingBox(false));
+        e.IncludeBoundingBox(BrepGeometry.GetBoundingBox(false));
       }
     }
 
