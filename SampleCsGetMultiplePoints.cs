@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Rhino;
 using Rhino.Commands;
+using Rhino.Geometry;
 
 namespace SampleCsCommands
 {
@@ -43,8 +44,10 @@ namespace SampleCsCommands
 
     protected override void CalculateBoundingBox(Rhino.Display.CalculateBoundingBoxEventArgs e)
     {
-      for (int i = 0; i < _points.Count; i++)
-        e.BoundingBox.Union(_points[i]);
+      var bbox = e.BoundingBox;
+      foreach (Point3d pt in _points)
+        bbox.Union(pt);
+      e.IncludeBoundingBox(bbox);
     }
 
     protected override void DrawOverlay(Rhino.Display.DrawEventArgs e)

@@ -13,7 +13,7 @@ namespace SampleCsCommands
     {
       if (null != Mesh)
       {
-        e.BoundingBox.Union(Mesh.GetBoundingBox(false));
+        e.IncludeBoundingBox(Mesh.GetBoundingBox(false));
       }
     }
 
