@@ -33,7 +33,7 @@ namespace SampleCsCommands
       GetObject get_rail = new GetObject();
       get_rail.SetCommandPrompt("Select rail curve");
       get_rail.GeometryFilter = geometryFilter;
-      get_rail.GeometryAttributeFilter = GeometryAttributeFilter.OpenCurve;
+      //get_rail.GeometryAttributeFilter = GeometryAttributeFilter.OpenCurve;
       get_rail.SubObjectSelect = false;
       get_rail.Get();
       if (get_rail.CommandResult() != Result.Success)
@@ -47,7 +47,7 @@ namespace SampleCsCommands
       GetObject get_shape = new GetObject();
       get_shape.SetCommandPrompt("Select cross section curve");
       get_shape.GeometryFilter = geometryFilter;
-      get_shape.GeometryAttributeFilter = GeometryAttributeFilter.OpenCurve;
+      //get_shape.GeometryAttributeFilter = GeometryAttributeFilter.OpenCurve;
       get_shape.SubObjectSelect = false;
       get_shape.EnablePreSelect(false, false);
       get_shape.DeselectAllBeforePostSelect = false;

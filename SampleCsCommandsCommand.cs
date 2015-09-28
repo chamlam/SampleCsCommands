@@ -1,13 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Windows.Forms;
-using Rhino;
+﻿using Rhino;
 using Rhino.Commands;
-using Rhino.DocObjects;
-using Rhino.Geometry;
-using Rhino.Input;
-using Rhino.Input.Custom;
 
 namespace SampleCsCommands
 {
