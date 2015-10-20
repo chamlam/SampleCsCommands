@@ -59,6 +59,7 @@
     </Compile>
     <Compile Include="SampleCsAddNurbsCircle.cs" />
     <Compile Include="SampleCsBoundingBox.cs" />
+    <Compile Include="SampleCsDrawRightAlignedText.cs" />
     <Compile Include="SampleCsDumpBlockTree.cs" />
     <Compile Include="SampleCsExtrusion.cs" />
     <Compile Include="SampleCsNurbsCircle.cs" />
@@ -136,6 +137,7 @@
     <Compile Include="SampleCsCurveEditPoints.cs" />
     <Compile Include="SampleCsExplodePolyCurve.cs" />
     <Compile Include="SampleCsSweep1.cs" />
+    <Compile Include="SampleCsSweep2.cs" />
     <Compile Include="SampleCsTestPlanarCurveContainment.cs" />
     <Compile Include="SampleCsText.cs" />
     <Compile Include="SampleCsTrimSurface.cs" />
