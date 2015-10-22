@@ -110,6 +110,7 @@
     <Compile Include="SampleCsModifySphereRadius.cs" />
     <Compile Include="SampleCsNamedPlaneSurface.cs" />
     <Compile Include="SampleCsOpen3dm.cs" />
+    <Compile Include="SampleCsOpenDwg.cs" />
     <Compile Include="SampleCsOrientPerpendicularToCurve.cs" />
     <Compile Include="SampleCsPersistentSettings.cs" />
     <Compile Include="SampleCsPictureFrame.cs" />
