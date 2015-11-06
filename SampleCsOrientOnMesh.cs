@@ -92,7 +92,10 @@ namespace SampleCsCommands
     private Plane m_object_plane;
     private bool m_draw;
     private Transform m_xform;
-    private List<RhinoObject> m_objects; 
+    private List<RhinoObject> m_objects;
+
+    // Mesh face plane cache
+    private Dictionary<int, Plane> m_face_planes; 
 
     /// <summary>
     /// Public constructor
@@ -104,6 +107,7 @@ namespace SampleCsCommands
       m_object_plane = plane;
       m_draw = false;
       m_xform = new Transform(1.0);
+      m_face_planes = new Dictionary<int, Plane>();
     }
 
     /// <summary>
@@ -177,12 +181,22 @@ namespace SampleCsCommands
         var mesh = mp.Mesh;
         if (null != mesh && 0 <= mp.FaceIndex && mp.FaceIndex < mesh.Faces.Count)
         {
-          if (mesh.FaceNormals.Count != mesh.Faces.Count)
-            mesh.FaceNormals.ComputeFaceNormals();
-          if (mesh.FaceNormals.Count == mesh.Faces.Count)
+          if (m_face_planes.ContainsKey(mp.FaceIndex))
           {
-            plane = new Plane(mesh.Vertices[mesh.Faces[mp.FaceIndex].A], mesh.FaceNormals[mp.FaceIndex]);
-            rc = plane.IsValid;
+            plane = m_face_planes[mp.FaceIndex];
+            rc = true;
+          }
+          else
+          {
+            if (mesh.FaceNormals.Count != mesh.Faces.Count)
+              mesh.FaceNormals.ComputeFaceNormals();
+            if (mesh.FaceNormals.Count == mesh.Faces.Count)
+            {
+              plane = new Plane(mesh.Vertices[mesh.Faces[mp.FaceIndex].A], mesh.FaceNormals[mp.FaceIndex]);
+              rc = plane.IsValid;
+              if (rc)
+                m_face_planes.Add(mp.FaceIndex, plane);
+            }
           }
         }
       }
