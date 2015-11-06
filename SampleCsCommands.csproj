@@ -112,6 +112,7 @@
     <Compile Include="SampleCsNamedPlaneSurface.cs" />
     <Compile Include="SampleCsOpen3dm.cs" />
     <Compile Include="SampleCsOpenDwg.cs" />
+    <Compile Include="SampleCsOrientOnMesh.cs" />
     <Compile Include="SampleCsOrientPerpendicularToCurve.cs" />
     <Compile Include="SampleCsPersistentSettings.cs" />
     <Compile Include="SampleCsPictureFrame.cs" />
@@ -139,7 +140,6 @@
     <Compile Include="SampleCsCurveEditPoints.cs" />
     <Compile Include="SampleCsExplodePolyCurve.cs" />
     <Compile Include="SampleCsSweep1.cs" />
-    <Compile Include="SampleCsSweep2.cs" />
     <Compile Include="SampleCsTestPlanarCurveContainment.cs" />
     <Compile Include="SampleCsText.cs" />
     <Compile Include="SampleCsTrimSurface.cs" />
