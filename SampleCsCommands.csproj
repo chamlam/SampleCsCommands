@@ -63,6 +63,7 @@
     <Compile Include="SampleCsDrawRightAlignedText.cs" />
     <Compile Include="SampleCsDumpBlockTree.cs" />
     <Compile Include="SampleCsExtrusion.cs" />
+    <Compile Include="SampleCsIntersectCurveLine.cs" />
     <Compile Include="SampleCsNurbsCircle.cs" />
     <Compile Include="SampleCsAddNurbsCurve.cs" />
     <Compile Include="SampleCsAddNurbsSurface.cs" />
