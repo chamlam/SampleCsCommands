@@ -59,7 +59,9 @@
     </Compile>
     <Compile Include="SampleCsAddNurbsCircle.cs" />
     <Compile Include="SampleCsAddTextDot.cs" />
+    <Compile Include="SampleCsBooleanDifference2.cs" />
     <Compile Include="SampleCsBoundingBox.cs" />
+    <Compile Include="SampleCsCircleRadius.cs" />
     <Compile Include="SampleCsDrawRightAlignedText.cs" />
     <Compile Include="SampleCsDumpBlockTree.cs" />
     <Compile Include="SampleCsExtrusion.cs" />
