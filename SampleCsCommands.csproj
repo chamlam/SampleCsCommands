@@ -148,6 +148,7 @@
     <Compile Include="SampleCsText.cs" />
     <Compile Include="SampleCsTrimSurface.cs" />
     <Compile Include="SampleCsUnisolate.cs" />
+    <Compile Include="SampleCsSetUserText.cs" />
     <Compile Include="SampleCsViewSize.cs" />
     <Compile Include="SampleCsZoom.cs" />
   </ItemGroup>
