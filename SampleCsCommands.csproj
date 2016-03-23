@@ -58,6 +58,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="SampleCsAddNurbsCircle.cs" />
+    <Compile Include="SampleCsAddRdkMaterials.cs" />
     <Compile Include="SampleCsAddTextDot.cs" />
     <Compile Include="SampleCsBooleanDifference2.cs" />
     <Compile Include="SampleCsBoundingBox.cs" />
@@ -119,6 +120,7 @@
     <Compile Include="SampleCsOrientOnMesh.cs" />
     <Compile Include="SampleCsOrientPerpendicularToCurve.cs" />
     <Compile Include="SampleCsPersistentSettings.cs" />
+    <Compile Include="SampleCsPickHole.cs" />
     <Compile Include="SampleCsPictureFrame.cs" />
     <Compile Include="SampleCsPlanarClosedCurveRelationship.cs" />
     <Compile Include="SampleCsPlanarFaceLoops.cs" />

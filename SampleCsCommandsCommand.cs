@@ -1,5 +1,6 @@
 ﻿using Rhino;
 using Rhino.Commands;
+using Rhino.DocObjects;
 
 namespace SampleCsCommands
 {
