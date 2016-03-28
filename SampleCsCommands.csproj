@@ -134,6 +134,7 @@
     <Compile Include="SampleCsRotate.cs" />
     <Compile Include="SampleCsSaveAs.cs" />
     <Compile Include="SampleCsSelectLayerObjects.cs" />
+    <Compile Include="SampleCsSetCameraTarget.cs" />
     <Compile Include="SampleCsSetDisplayMode.cs" />
     <Compile Include="SampleCsSetPoint.cs" />
     <Compile Include="SampleCsShadedBrep.cs" />
