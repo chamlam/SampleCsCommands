@@ -146,6 +146,7 @@
     <Compile Include="SampleCsSmooth.cs" />
     <Compile Include="SampleCsSpiral.cs" />
     <Compile Include="SampleCsSplitCurve.cs" />
+    <Compile Include="SampleCsStackedControlPointsCurve.cs" />
     <Compile Include="SampleCsSubCurve.cs" />
     <Compile Include="SampleCsCurveEditPoints.cs" />
     <Compile Include="SampleCsExplodePolyCurve.cs" />
