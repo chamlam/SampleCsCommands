@@ -68,6 +68,7 @@
     <Compile Include="SampleCsEmbedTextFile.cs" />
     <Compile Include="SampleCsExtrusion.cs" />
     <Compile Include="SampleCsIntersectCurveLine.cs" />
+    <Compile Include="SampleCsIntersectionMeshPolyline.cs" />
     <Compile Include="SampleCsLastCreatedObjects.cs" />
     <Compile Include="SampleCsNurbsCircle.cs" />
     <Compile Include="SampleCsAddNurbsCurve.cs" />
