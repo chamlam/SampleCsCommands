@@ -37,7 +37,11 @@ namespace SampleCsCommands
         if (ccx.IsPoint)
           rhobject_id = doc.Objects.AddPoint(ccx.PointA);
         else if (ccx.IsOverlap)
-          rhobject_id = doc.Objects.AddLine(ccx.PointA, ccx.PointA2);
+        {
+          var curve = curve0.Trim(ccx.OverlapA);
+          if (null != curve)
+            rhobject_id = doc.Objects.AddCurve(curve);
+        }
 
         if (rhobject_id != Guid.Empty)
         {
