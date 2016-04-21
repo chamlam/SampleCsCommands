@@ -69,6 +69,7 @@
     <Compile Include="SampleCsExtrusion.cs" />
     <Compile Include="SampleCsGetDirection.cs" />
     <Compile Include="SampleCsIntersectCurveLine.cs" />
+    <Compile Include="SampleCsIntersectCurves.cs" />
     <Compile Include="SampleCsIntersectionMeshPolyline.cs" />
     <Compile Include="SampleCsLastCreatedObjects.cs" />
     <Compile Include="SampleCsNurbsCircle.cs" />
