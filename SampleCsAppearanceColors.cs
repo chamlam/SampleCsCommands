@@ -1,4 +1,5 @@
 ﻿using System.Drawing;
+using System.Windows.Forms;
 using Rhino;
 using Rhino.ApplicationSettings;
 using Rhino.Commands;
@@ -15,7 +16,20 @@ namespace SampleCsCommands
 
     protected override Result RunCommand(RhinoDoc doc, RunMode mode)
     {
-      // Viewport colors
+      //
+      // Colors from Appearance page
+      //
+
+      Print("Command prompt");
+      PrintColor("Background", AppearanceSettings.CommandPromptBackgroundColor);
+      PrintColor("Text color", AppearanceSettings.CommandPromptTextColor);
+      PrintColor("Hover color", AppearanceSettings.CommandPromptBackgroundColor);
+
+      //
+      // Colors from Appearance -> Colors page
+      //
+
+      Print("Viewport colors");
       PrintColor("Background", AppearanceSettings.ViewportBackgroundColor);
       PrintColor("Major grid line", AppearanceSettings.GridThickLineColor);
       PrintColor("Minor grid line", AppearanceSettings.GridThinLineColor);
@@ -27,20 +41,20 @@ namespace SampleCsCommands
       PrintColor("World axis icon Z", AppearanceSettings.WorldCoordIconZAxisColor);
       PrintColor("Layout", AppearanceSettings.PageviewPaperColor);
 
-      // Object display
+      Print("Object display");
       PrintColor("Selected objects", AppearanceSettings.SelectedObjectColor);
       PrintColor("Locked objects", AppearanceSettings.LockedObjectColor);
       PrintColor("New layer", AppearanceSettings.DefaultLayerColor);
 
-      // Interface objects
+      Print("Interface objects");
       PrintColor("Feedback", AppearanceSettings.CrosshairColor);
       PrintColor("Tracking lines", AppearanceSettings.CrosshairColor);
       PrintColor("Crosshair", AppearanceSettings.CrosshairColor);
 
-      // Layer dialog box
+      Print("Layer dialog box");
       PrintColor("Layout settings background", AppearanceSettings.CurrentLayerBackgroundColor);
 
-      // General
+      Print("General");
       PrintColor("Window color 1", AppearanceSettings.GetPaintColor(PaintColor.NormalStart));
       PrintColor("Window color 2", AppearanceSettings.GetPaintColor(PaintColor.NormalEnd));
       PrintColor("Window color 3", AppearanceSettings.GetPaintColor(PaintColor.HotStart));
@@ -49,7 +63,7 @@ namespace SampleCsCommands
       PrintNoColor("Active viewport title");
       PrintNoColor("Inactive viewport title");
 
-      // Widget colors
+      Print("Widget colors");
       PrintNoColor("U-axis");
       PrintNoColor("V-axis");
       PrintNoColor("W-axis");
@@ -57,14 +71,19 @@ namespace SampleCsCommands
       return Result.Success;
     }
 
+    protected void Print(string label)
+    {
+      RhinoApp.WriteLine(label);
+    }
+
     protected void PrintColor(string label, Color color)
     {
-      RhinoApp.WriteLine("{0} - {1}", label, color.Name);
+      RhinoApp.WriteLine("\t{0} - {1}", label, color.Name);
     }
 
     protected void PrintNoColor(string label)
     {
-      RhinoApp.WriteLine("{0} - not available", label);
+      RhinoApp.WriteLine("\t{0} - not available", label);
     }
 
   }
