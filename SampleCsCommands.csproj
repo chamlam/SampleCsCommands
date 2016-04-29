@@ -60,6 +60,7 @@
     <Compile Include="SampleCsAddNurbsCircle.cs" />
     <Compile Include="SampleCsAddRdkMaterials.cs" />
     <Compile Include="SampleCsAddTextDot.cs" />
+    <Compile Include="SampleCsAppearanceColors.cs" />
     <Compile Include="SampleCsBooleanDifference2.cs" />
     <Compile Include="SampleCsBoundingBox.cs" />
     <Compile Include="SampleCsCircleRadius.cs" />
@@ -70,6 +71,7 @@
     <Compile Include="SampleCsGetDirection.cs" />
     <Compile Include="SampleCsIntersectCurveLine.cs" />
     <Compile Include="SampleCsIntersectCurves.cs" />
+    <Compile Include="SampleCsIntersectCurveSelf.cs" />
     <Compile Include="SampleCsIntersectionMeshPolyline.cs" />
     <Compile Include="SampleCsLastCreatedObjects.cs" />
     <Compile Include="SampleCsNurbsCircle.cs" />
