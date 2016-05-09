@@ -1,5 +1,4 @@
-﻿using System;
-using Rhino;
+﻿using Rhino;
 using Rhino.Commands;
 using Rhino.Input.Custom;
 
@@ -12,13 +11,6 @@ namespace SampleCsCommands
     private const int INT_DEFAULT = 1;
     private const double DBL_DEFAULT = 3.14;
     private const int LIST_DEFAULT = 3;
-
-    /// <summary>
-    /// Public constructor
-    /// </summary>
-    public SampleCsPersistentSettings()
-    {
-    }
 
     /// <summary>
     /// EnglishName override
@@ -34,33 +26,32 @@ namespace SampleCsCommands
     protected override Result RunCommand(RhinoDoc doc, RunMode mode)
     {
       // Get persistent settings (from Registry)
-      PersistentSettings settings = this.Settings;
-      bool bool_value = settings.GetBool("BoolValue", BOOL_DEFAULT);
-      int int_value = settings.GetInteger("IntValue", INT_DEFAULT);
-      double dbl_value = settings.GetDouble("DblValue", DBL_DEFAULT);
-      int list_value = settings.GetInteger("ListValue", LIST_DEFAULT);
+      var bool_value = Settings.GetBool("BoolValue", BOOL_DEFAULT);
+      var int_value = Settings.GetInteger("IntValue", INT_DEFAULT);
+      var dbl_value = Settings.GetDouble("DblValue", DBL_DEFAULT);
+      var list_value = Settings.GetInteger("ListValue", LIST_DEFAULT);
 
-      GetPoint gp = new GetPoint();
+      var gp = new GetPoint();
       gp.SetCommandPrompt("GetPoint with options");
 
-      Result rc = Result.Cancel;
+      var rc = Result.Cancel;
 
       while (true)
       {
         gp.ClearCommandOptions();
 
-        OptionToggle bool_option = new OptionToggle(bool_value, "Off", "On");
-        OptionInteger int_option = new OptionInteger(int_value, 1, 99);
-        OptionDouble dbl_option = new OptionDouble(dbl_value, 0, 99.9);
-        string[] list_items = new string[5] { "Item0", "Item1", "Item2", "Item3", "Item4" };
+        var bool_option = new OptionToggle(bool_value, "Off", "On");
+        var int_option = new OptionInteger(int_value, 1, 99);
+        var dbl_option = new OptionDouble(dbl_value, 0, 99.9);
+        var list_items = new[] { "Item0", "Item1", "Item2", "Item3", "Item4" };
 
-        int bool_index = gp.AddOptionToggle("Boolean", ref bool_option);
-        int int_index = gp.AddOptionInteger("Integer", ref int_option);
-        int dbl_index = gp.AddOptionDouble("Double", ref dbl_option);
-        int list_index = gp.AddOptionList("List", list_items, list_value);
-        int reset_index = gp.AddOption("Reset");
+        var bool_index = gp.AddOptionToggle("Boolean", ref bool_option);
+        var int_index = gp.AddOptionInteger("Integer", ref int_option);
+        var dbl_index = gp.AddOptionDouble("Double", ref dbl_option);
+        var list_index = gp.AddOptionList("List", list_items, list_value);
+        var reset_index = gp.AddOption("Reset");
 
-        Rhino.Input.GetResult res = gp.Get();
+        var res = gp.Get();
 
         if (res == Rhino.Input.GetResult.Point)
         {
@@ -70,7 +61,7 @@ namespace SampleCsCommands
         }
         else if (res == Rhino.Input.GetResult.Option)
         {
-          CommandLineOption option = gp.Option();
+          var option = gp.Option();
           if (null != option)
           {
             if (option.Index == bool_index)
@@ -98,10 +89,10 @@ namespace SampleCsCommands
       if (rc == Result.Success)
       {
         // Set persistent settings (to Registry)
-        settings.SetBool("BoolValue", bool_value);
-        settings.SetInteger("IntValue", int_value);
-        settings.SetDouble("DblValue", dbl_value);
-        settings.SetInteger("ListValue", list_value);
+        Settings.SetBool("BoolValue", bool_value);
+        Settings.SetInteger("IntValue", int_value);
+        Settings.SetDouble("DblValue", dbl_value);
+        Settings.SetInteger("ListValue", list_value);
       }
 
       return rc;
