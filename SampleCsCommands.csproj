@@ -68,6 +68,7 @@
     <Compile Include="SampleCsDumpBlockTree.cs" />
     <Compile Include="SampleCsEmbedTextFile.cs" />
     <Compile Include="SampleCsExtrusion.cs" />
+    <Compile Include="SampleCsFaceWithHole.cs" />
     <Compile Include="SampleCsGetDirection.cs" />
     <Compile Include="SampleCsIntersectCurveLine.cs" />
     <Compile Include="SampleCsIntersectCurves.cs" />
@@ -160,6 +161,7 @@
     <Compile Include="SampleCsSweep1.cs" />
     <Compile Include="SampleCsTestPlanarCurveContainment.cs" />
     <Compile Include="SampleCsText.cs" />
+    <Compile Include="SampleCsTrimmedPlane.cs" />
     <Compile Include="SampleCsTrimSurface.cs" />
     <Compile Include="SampleCsUnisolate.cs" />
     <Compile Include="SampleCsSetUserText.cs" />
