@@ -64,6 +64,7 @@
     <Compile Include="SampleCsBooleanDifference2.cs" />
     <Compile Include="SampleCsBoundingBox.cs" />
     <Compile Include="SampleCsCircleRadius.cs" />
+    <Compile Include="SampleCsCurveDiscontinuity.cs" />
     <Compile Include="SampleCsDrawRightAlignedText.cs" />
     <Compile Include="SampleCsDumpBlockTree.cs" />
     <Compile Include="SampleCsEmbedTextFile.cs" />
