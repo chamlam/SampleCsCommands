@@ -76,6 +76,7 @@
     <Compile Include="SampleCsIntersectCurveSelf.cs" />
     <Compile Include="SampleCsIntersectionMeshPolyline.cs" />
     <Compile Include="SampleCsLastCreatedObjects.cs" />
+    <Compile Include="SampleCsMeshBox.cs" />
     <Compile Include="SampleCsNurbsCircle.cs" />
     <Compile Include="SampleCsAddNurbsCurve.cs" />
     <Compile Include="SampleCsAddNurbsSurface.cs" />
