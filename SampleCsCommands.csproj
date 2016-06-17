@@ -65,6 +65,7 @@
     <Compile Include="SampleCsBoundingBox.cs" />
     <Compile Include="SampleCsCircleRadius.cs" />
     <Compile Include="SampleCsCurveDiscontinuity.cs" />
+    <Compile Include="SampleCsCurvePoints.cs" />
     <Compile Include="SampleCsDrawRightAlignedText.cs" />
     <Compile Include="SampleCsDumpBlockTree.cs" />
     <Compile Include="SampleCsEmbedTextFile.cs" />
