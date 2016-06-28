@@ -139,6 +139,7 @@
     <Compile Include="SampleCsPrintViewList.cs" />
     <Compile Include="SampleCsProjectPointToMesh.cs" />
     <Compile Include="SampleCsRenderBackground.cs" />
+    <Compile Include="SampleCsRestoreLayerState.cs" />
     <Compile Include="SampleCsRestoreNamedView.cs" />
     <Compile Include="SampleCsRotate.cs" />
     <Compile Include="SampleCsSaveAs.cs" />
