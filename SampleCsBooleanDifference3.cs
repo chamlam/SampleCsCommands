@@ -84,17 +84,17 @@ namespace SampleCsCommands
       // Create a Brep from the surface
       var brep = surface.ToBrep();
 
-      // Cap any planar holes
-      var capped_brep = brep.CapPlanarHoles(tolerance);
-      if (null == capped_brep)
-        return null;
-
       // The profile curve is a degree=1 curve. Thus, the extruded surface will
       // have kinks. Because kinked surface can cause problems down stream, Rhino
       // always splits kinked surfaces when adding Breps to the document. Since
       // we are not adding this Brep to the document, lets split the kinked
       // surfaces ourself.
       brep.Faces.SplitKinkyFaces(RhinoMath.DefaultAngleTolerance, true);
+
+      // Cap any planar holes
+      var capped_brep = brep.CapPlanarHoles(tolerance);
+      if (null == capped_brep)
+        return null;
 
       // The profile curve, created by the input points, is oriented clockwise.
       // Thus when the profile is extruded, the resulting surface will have its
