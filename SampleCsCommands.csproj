@@ -62,6 +62,7 @@
     <Compile Include="SampleCsAddTextDot.cs" />
     <Compile Include="SampleCsAppearanceColors.cs" />
     <Compile Include="SampleCsBooleanDifference2.cs" />
+    <Compile Include="SampleCsBooleanDifference3.cs" />
     <Compile Include="SampleCsBoundingBox.cs" />
     <Compile Include="SampleCsCircleRadius.cs" />
     <Compile Include="SampleCsCurveDiscontinuity.cs" />
