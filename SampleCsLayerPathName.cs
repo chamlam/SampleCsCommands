@@ -75,7 +75,6 @@ namespace SampleCsCommands
       for (var i = 0; i < file.Layers.Count; i++)
       {
         var layer = file.Layers[layerIndex];
-
         var layer_name = layer.Name;
         if (string.IsNullOrEmpty(name))
         {
