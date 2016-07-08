@@ -68,10 +68,7 @@ namespace SampleCsCommands
     /// </summary>
     private bool GetLayerPathName(File3dm file, int layerIndex, string delimeter, ref string fullName)
     {
-      if (null == file)
-        return false;
-
-      if (layerIndex < 0 || layerIndex >= file.Layers.Count)
+      if (null == file || layerIndex < 0 || layerIndex >= file.Layers.Count)
         return false;
 
       string name = null;
