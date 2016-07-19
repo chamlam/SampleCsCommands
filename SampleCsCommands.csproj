@@ -80,6 +80,7 @@
     <Compile Include="SampleCsLastCreatedObjects.cs" />
     <Compile Include="SampleCsLayerPathName.cs" />
     <Compile Include="SampleCsMeshBox.cs" />
+    <Compile Include="SampleCsMove.cs" />
     <Compile Include="SampleCsNurbsCircle.cs" />
     <Compile Include="SampleCsAddNurbsCurve.cs" />
     <Compile Include="SampleCsAddNurbsSurface.cs" />
