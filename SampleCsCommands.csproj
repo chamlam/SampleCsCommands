@@ -69,6 +69,7 @@
     <Compile Include="SampleCsCurvePoints.cs" />
     <Compile Include="SampleCsDrawRightAlignedText.cs" />
     <Compile Include="SampleCsDumpBlockTree.cs" />
+    <Compile Include="SampleCsEditPolyline.cs" />
     <Compile Include="SampleCsEmbedTextFile.cs" />
     <Compile Include="SampleCsExtrusion.cs" />
     <Compile Include="SampleCsFaceWithHole.cs" />
