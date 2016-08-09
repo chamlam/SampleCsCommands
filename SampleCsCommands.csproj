@@ -74,6 +74,7 @@
     <Compile Include="SampleCsExtrusion.cs" />
     <Compile Include="SampleCsFaceWithHole.cs" />
     <Compile Include="SampleCsGetDirection.cs" />
+    <Compile Include="SampleCsGroup.cs" />
     <Compile Include="SampleCsIntersectCurveLine.cs" />
     <Compile Include="SampleCsIntersectCurves.cs" />
     <Compile Include="SampleCsIntersectCurveSelf.cs" />
