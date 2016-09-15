@@ -57,6 +57,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="SampleCsLayerOff.cs" />
     <Compile Include="SampleCsAddNurbsCircle.cs" />
     <Compile Include="SampleCsAddRdkMaterials.cs" />
     <Compile Include="SampleCsAddTextDot.cs" />
